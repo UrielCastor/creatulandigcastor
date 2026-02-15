@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { obtenerProductos } from '../../../services/mocks/Products';
+// import { obtenerProductos } from '../../../services/mocks/Products';
 import { Card } from "../../components/Card";
 import './products.css'
 import { ComprarButton } from "../../components/BtnCmp/BtnCmp";
+import { services } from "../../../services";
 
 
 
@@ -13,10 +14,10 @@ const Product = () => {
     
 
     useEffect(() => {
-        obtenerProductos()
+        services.Firebase.productosFirebase.getProductById(params.id)
             .then((response) => {
-                const p = response.data.find(p => p.id === Number(params.id));
-                setProduct(p || null);
+                setProduct(response.data || null);
+                console.log("Respuesta:", response);
             });
     }, [params.id]);
     if (!product) return <p>Cargando producto...</p>;
