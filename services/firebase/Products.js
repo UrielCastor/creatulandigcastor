@@ -33,7 +33,7 @@ const hasMore = docs.length === 10;
 }
 const getProductsByCategory = async (category) => {
   try {
-    const productsQuery = query(collection(firestore, "Productos"), orderBy("categoria"), limit(10));
+    const productsQuery = query(collection(firestore, "Productos"), orderBy("categoria"));
     const querySnapshot = await getDocs(productsQuery);
     const productos = querySnapshot.docs
       .map(doc => ({ id: doc.id, ...doc.data() }))
