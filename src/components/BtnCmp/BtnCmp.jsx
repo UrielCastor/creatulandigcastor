@@ -1,12 +1,14 @@
 import "./BtnCmp.css";
 import {useCartContext} from "../../context";
-import "./BtnCmp.css";
+
+import { notify } from "../ToastyCompra/NotyTosty";
 
 const ComprarButton = ({ product, disabled = false }) => {
   const { addToCart } = useCartContext();
 
   const handleClick = () => {
     addToCart({ ...product, quantity: 1 });
+    notify(`${product.nombre} agregado al carrito!`, "success");
   };
 
   return (

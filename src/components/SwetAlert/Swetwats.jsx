@@ -35,4 +35,31 @@ const WhatsAppLink = () => {
     </a>
   );
 };
-export {WhatsAppLink};
+const finalizarcompra = () => {
+  Swal.fire({
+    icon: "success",  
+    title: "Compra finalizada",
+    text: "¡Gracias por tu compra! Tu pedido ha sido procesado exitosamente.",
+    confirmButtonText: "Aceptar",
+    confirmButtonColor: "#25D366",
+  });
+} 
+const errorcompra = () => {
+  Swal.fire({
+    icon: "error",
+    title: "Error en la compra",
+    text: "Hubo un problema al procesar tu compra. Por favor, intenta nuevamente.",
+    confirmButtonText: "Aceptar",
+    confirmButtonColor: "#25D366",
+  });
+} 
+const carritovacio = () => {
+  Swal.fire({
+    icon: "warning",
+    title: "Carrito vacío",
+    text: "Tu carrito está vacío. Agrega productos para finalizar tu compra.",
+    confirmButtonText: "Aceptar",
+    confirmButtonColor: "#25D366",
+  });
+}
+export {WhatsAppLink, finalizarcompra, errorcompra, carritovacio};

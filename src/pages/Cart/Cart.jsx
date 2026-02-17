@@ -65,7 +65,7 @@ const Cart = () => {
       )}
 <div className="cart-price">
       <h2 className="total-price">Total: ${totalPrice}</h2>
-      <p className="cart-total">Total de artículos: {totalItems}</p>
+      <p className="total-art">Total de artículos: {totalItems}</p>
       </div>
       {cart.length > 0 && (
         <button className="btn-clear" onClick={clearCart}>Vaciar carrito</button>

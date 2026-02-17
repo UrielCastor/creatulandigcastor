@@ -5,6 +5,7 @@ import { useCartContext } from '../../context/CartContext';
 import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import { firestore } from '../../../src/utils/firebase'; 
 import { useState } from 'react';
+import { finalizarcompra,errorcompra,carritovacio } from '../SwetAlert/Swetwats';
 
 const BtnFinalizar = () => {
   const { cart, clearCart } = useCartContext();
@@ -12,7 +13,7 @@ const BtnFinalizar = () => {
 
   const handleFinalizar = async () => {
     if (cart.length === 0) {
-      alert("El carrito está vacío");
+      carritovacio();
       return;
     }
 
@@ -31,10 +32,9 @@ const BtnFinalizar = () => {
       await addDoc(collection(firestore , "compras"), compra);
       clearCart();
       localStorage.removeItem("cart");
-      alert("Compra finalizada con éxito!");
+      finalizarcompra();
     } catch (error) {
-      console.error("Error al guardar la compra:", error);
-      alert("No se pudo procesar la compra. Intente nuevamente.");
+      errorcompra();
     } finally {
       setLoading(false);
     }

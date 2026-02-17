@@ -4,7 +4,12 @@ import IconoCarrito from "./iconoCarrito.jsx";
 import { NavLink } from "react-router";
 import { Link } from "react-router";
 import './navbar.css'
+import { useState } from "react";
+import { useCartContext } from "../../context/index.js";
+import { ModalCart } from "../ModalCart/ModalCart.jsx";
 const Navbar = () => {
+  const [showModal, setShowModal] = useState(false);
+  const { cart } = useCartContext();
   return (
 
     <nav className="navbar bg-primary navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
@@ -25,9 +30,9 @@ const Navbar = () => {
             </NavLink>
             <NavLink className="nav-link" to="/Contact" end>
               Contacto
-            </NavLink>           
+            </NavLink>
             <li className="nav-item dropdown">
-                <a   className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Categorias
               </a>
               <ul className="dropdown-menu">
@@ -41,13 +46,21 @@ const Navbar = () => {
                 <li><Link className="dropdown-item nav-link" to="/Categoria/Gabinetes">Gabinetes</Link></li>
                 <li><Link className="dropdown-item nav-link" to="/Categoria/Monitores">Monitores</Link></li>
                 <li><Link className="dropdown-item nav-link" to="/Categoria/Refrigeracion">Refrigeracion</Link></li>
-                
+
               </ul>
             </li>
           </ul>
 
           <form className="d-flex" role="search">
-           < IconoCarrito />
+            <div
+              className="carrito-wrapper"
+              onMouseEnter={() => setShowModal(true)}
+              onMouseLeave={() => setShowModal(false)}
+              style={{ position: "relative" }}
+            >
+              <IconoCarrito />
+              {showModal && <ModalCart />}
+            </div>
           </form>
         </div>
 

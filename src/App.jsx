@@ -10,6 +10,7 @@ import {Cat} from './pages/Products/Categoria.jsx';
 import { Home } from './home.jsx';
 import { Footer } from './components/Footer/Footer.jsx';
 import {Cart} from './pages/Cart/Cart.jsx';
+import { ToastContainer } from "react-toastify";
 
 
 
@@ -20,7 +21,7 @@ function App() {
     <>
    
       <Navbar/>
-
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/Products" element={<ListaProductos />} />
