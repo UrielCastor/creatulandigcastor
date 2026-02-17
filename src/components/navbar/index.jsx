@@ -7,16 +7,16 @@ import './navbar.css'
 const Navbar = () => {
   return (
 
-    <nav class="navbar bg-primary navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-      <div class="container-fluid contenedornavbar">
-        <img class="logo navbar-brand" src="../src/assets/images/logo4.png" alt="Logo ElectrOulet" />
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+    <nav className="navbar bg-primary navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <div className="container-fluid contenedornavbar">
+        <img className="logo navbar-brand" src="../src/assets/images/logo4.png" alt="Logo ElectrOulet" />
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
             <NavLink className="nav-link" to="/" end>
               Inicio
             </NavLink>
@@ -25,9 +25,9 @@ const Navbar = () => {
             </NavLink>
             <NavLink className="nav-link" to="/Contact" end>
               Contacto
-            </NavLink>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            </NavLink>           
+            <li className="nav-item dropdown">
+                <a   className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Categorias
               </a>
               <ul className="dropdown-menu">
@@ -41,16 +41,18 @@ const Navbar = () => {
                 <li><Link className="dropdown-item nav-link" to="/Categoria/Gabinetes">Gabinetes</Link></li>
                 <li><Link className="dropdown-item nav-link" to="/Categoria/Monitores">Monitores</Link></li>
                 <li><Link className="dropdown-item nav-link" to="/Categoria/Refrigeracion">Refrigeracion</Link></li>
+                
               </ul>
             </li>
           </ul>
 
-          <form class="d-flex" role="search">
-            <a class="nav-link carrito" aria-disabled="true" href="#">< IconoCarrito /></a>
+          <form className="d-flex" role="search">
+           < IconoCarrito />
           </form>
         </div>
 
       </div>
+
 
     </nav>
   )

@@ -1,10 +1,13 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { NavLink } from "react-router";
+
 function IconoCarrito() {
   return (
-    <div>
-      {/* 🛒<span></span> */}
-        <i className="fa fa-cart-plus"></i>
-    </div>
+    
+      <NavLink className="nav-link" to="/cart" end>
+        🛒
+      </NavLink>
+    
   )
 }
 export default IconoCarrito;

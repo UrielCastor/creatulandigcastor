@@ -1,4 +1,4 @@
 import { productosFirebase } from "./Products";
-// import {CartLogic} from "./Cart";
+import {guardarCarrito} from "./Cart";
 
-export const Firebase = { productosFirebase };
+export const Firebase = { productosFirebase, guardarCarrito };

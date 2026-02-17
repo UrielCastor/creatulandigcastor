@@ -31,7 +31,18 @@ const hasMore = docs.length === 10;
   return { success: false, error };
 }
 }
-
+const getProductsByCategory = async (category) => {
+  try {
+    const productsQuery = query(collection(firestore, "Productos"), orderBy("categoria"), limit(10));
+    const querySnapshot = await getDocs(productsQuery);
+    const productos = querySnapshot.docs
+      .map(doc => ({ id: doc.id, ...doc.data() }))
+      .filter(product => product.categoria === category);
+    return { success: true, data: productos };
+  } catch (error) {
+    return { success: false, error };
+  } 
+};
 const getProductById = async (id) => {
   try {
     const docRef = await getDoc(doc(firestore, "Productos", id));
@@ -66,4 +77,4 @@ const addProduct = async (data) => {
 //   return { success: true, data: user };
 // };
 
-export const productosFirebase = { getProducts,addProduct,getProductById};
+export const productosFirebase = { getProducts,addProduct,getProductById,getProductsByCategory};

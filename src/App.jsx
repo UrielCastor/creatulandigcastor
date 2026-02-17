@@ -9,6 +9,7 @@ import {Product} from './pages/Products/Product.jsx';
 import {Cat} from './pages/Products/Categoria.jsx';
 import { Home } from './home.jsx';
 import { Footer } from './components/Footer/Footer.jsx';
+import {Cart} from './pages/Cart/Cart.jsx';
 
 
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Product/:id" element={<Product />} />
         <Route path="/Categoria/:cat" element={<Cat />} />
+        <Route path="/Cart" element={<Cart />} />
      </Routes>
      <br></br>
  

@@ -40,8 +40,7 @@ const ListaProductos = () => {
             <p className="card-price">Precio: ${product.precio}</p>
             <img className="card-image" src={product.imagen} />
             <Link className="btn-ver" to={`/Product/${product.id}`}>Detalles</Link>
-            <ComprarButton />
-
+            <ComprarButton product={product}/>
           </Card>;
 
 
