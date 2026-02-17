@@ -53,6 +53,24 @@ const errorcompra = () => {
     confirmButtonColor: "#25D366",
   });
 } 
+const vaciarcarrito = () => {
+  Swal.fire({
+    icon: "success",
+    title: "Carrito vaciado",
+    text: "Tu carrito ha sido vaciado exitosamente.",
+    confirmButtonText: "Aceptar",
+    confirmButtonColor: "#25D366",
+  });
+}
+const borrarproduct = () => {
+  Swal.fire({
+    icon: "success",
+    title: "Producto eliminado",
+    text: "El producto ha sido eliminado del carrito.",
+    confirmButtonText: "Aceptar",
+    confirmButtonColor: "#25D366",
+  });
+}
 const carritovacio = () => {
   Swal.fire({
     icon: "warning",
@@ -62,4 +80,4 @@ const carritovacio = () => {
     confirmButtonColor: "#25D366",
   });
 }
-export {WhatsAppLink, finalizarcompra, errorcompra, carritovacio};
+export {WhatsAppLink, finalizarcompra, errorcompra, carritovacio,vaciarcarrito, borrarproduct};

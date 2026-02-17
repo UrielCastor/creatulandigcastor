@@ -3,6 +3,8 @@ import './Cart.css';
 import {CountP} from "../../components/CountProduct/CountP";
 import { NavLink } from "react-router";
 import { BtnFinalizar } from "../../components/BtnFinalizar/BtnFinalizar.jsx";
+import { vaciarcarrito,borrarproduct } from "../../components/SwetAlert/Swetwats.jsx";
+
 
 
 
@@ -55,7 +57,8 @@ const Cart = () => {
 
   <button
     className="btn-remove"
-    onClick={() => removeFromCart(item.id)}
+   
+    onClick={() => {borrarproduct(); removeFromCart(item.id);}}
   >
     Eliminar
   </button>
@@ -68,7 +71,7 @@ const Cart = () => {
       <p className="total-art">Total de artículos: {totalItems}</p>
       </div>
       {cart.length > 0 && (
-        <button className="btn-clear" onClick={clearCart}>Vaciar carrito</button>
+        <button className="btn-clear" onClick={() => {vaciarcarrito(); clearCart();}}>Vaciar carrito</button>
       )}
       <br />
       <br />
