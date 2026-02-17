@@ -1,22 +1,33 @@
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const notify = (message, type = "success") => {
-  switch(type) {
+  const options = {
+    position: "top-left",  
+    autoClose: 1000,         
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "dark"
+  };
+
+  switch (type) {
+
     case "success":
-      toast.success(message);
-      
+      toast.success(message,options);
+
       break;
     case "error":
-      toast.error(message);
+      toast.error(message,options);
       break;
     case "info":
-      toast.info(message);
+      toast.info(message,options);
       break;
     case "warning":
-      toast.warning(message);
+      toast.warning(message,options);
       break;
     default:
-      toast(message);
+      toast(message,options);
   }
 };
 export { notify };
